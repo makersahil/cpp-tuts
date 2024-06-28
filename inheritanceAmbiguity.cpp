@@ -17,7 +17,7 @@ class Kingdom {
     public:
         string name;
 
-        void enlighten() {
+        void speak() {
             cout << "From Kingdom" << endl;
         }
 };
@@ -29,8 +29,10 @@ class Dog : public Animal, public Kingdom {
 int main() {
 
     Dog d;
-    d.speak();
-    d.enlighten();
+
+    // resolved ambiguity by mentioning class name whose method should be accessed.
+    d.Animal::speak();
+    d.Kingdom::speak();
 
     return 0;
 }

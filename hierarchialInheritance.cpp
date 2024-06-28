@@ -3,16 +3,6 @@
 
 using namespace std;
 
-class Animal {
-    public:
-        string species;
-        string sound;
-
-        void speak() {
-            cout << "From Animal" << endl;
-        }
-};
-
 class Kingdom {
     public:
         string name;
@@ -22,15 +12,32 @@ class Kingdom {
         }
 };
 
-class Dog : public Animal, public Kingdom {
+class Animal : public Kingdom{
+    public:
+        string species;
+        string sound;
 
+        void speak() {
+            cout << "From Animal" << endl;
+        }
 };
+
+
+class Dog : public Animal {};
+
+class Cat : public Animal {};
+
+
 
 int main() {
 
     Dog d;
+    Cat c;
+
     d.speak();
     d.enlighten();
+    c.speak();
+    c.enlighten();
 
     return 0;
 }

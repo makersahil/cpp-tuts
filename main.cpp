@@ -3,40 +3,9 @@
 
 using namespace std;
 
-class Person {
+int main() {
 
-    public:
-        string name;
-        int age;
+    cout << "Intermediate C++ Course Complete. Thanks main.cpp for holding so much!";
 
-        // static data member - class level - shared memory for all objects
-        static int maxAge;
-
-        // static method - can only access static data member
-        static void printMaxAge() {
-            cout << maxAge << endl; // can't use this keyword as its not instance scoped
-        }
-
-        void printDetails() {
-            cout << "This person's name is " << this->name << " who is " << this->age << " years old.";
-        }
-
-};
-
-int Person::maxAge = 65;
-
-int main() { // Driver Code
-
-    cout << Person::maxAge << endl;
-    Person::printMaxAge();
-
-
-    Person a, b, c;
-
-    // proof of shared memory
-    cout << a.maxAge << endl;
-    cout << b.maxAge << endl;
-    cout << c.maxAge << endl;
-
-return 0;
+    return 0;
 }
